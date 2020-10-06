@@ -48,7 +48,7 @@ void loop() {
 }
 void fadeLED () {
   if (photoresistor < threshold) {
-    // if dark, light will fade from red to blue
+    // if dark, light will fade from red to blue to red
     for (int i = 0; i <= 100; i = i + 5) {
       analogWrite(RedPin, 100-i);
       analogWrite(GreenPin, 0);
