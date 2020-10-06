@@ -68,6 +68,7 @@ void fadeLED () {
 }
 void change_threshold () {
   delay(1);
+  // potentiometer value changes the threshold value which then effects when the light turns on
 }
 void multi_color_blink () {
   if (photoresistor < threshold) {
