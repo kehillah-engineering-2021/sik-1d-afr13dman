@@ -40,17 +40,29 @@ void loop() {
   Serial.print("  Potentiometer value:");
   Serial.println(potentiometer);          //print the potentiometer value to the serial monitor
 
-   multiple_colors();
-//  multi_color_blink();
+//  multiple_colors();
+  multi_color_blink();
 
   delay(100); //short delay so that the printout is easier to read
 }
 void multi_color_blink () {
   if (photoresistor < threshold) {
+    // if dark, light will blink the rainbow
     red();
     delay(300);
     orange();
     delay(300);
+    yellow();
+    delay(300);
+    green();
+    delay(300);
+    blue();
+    delay(300);
+    darkmagenta();
+    delay(300);
+  }
+  else { //if it isn't dark turn the LED off, but will turn off after a run through of the colors
+    turnOff(); //call the turn off function
   }
 }
 void multiple_colors () {
