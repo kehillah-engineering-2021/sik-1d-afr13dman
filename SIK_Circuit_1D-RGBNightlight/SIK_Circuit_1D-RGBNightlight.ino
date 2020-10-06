@@ -49,78 +49,94 @@ void multiple_colors () {
     //These nested if statements check for a variety of ranges and
     //call different functions based on the current potentiometer value.
     //Those functions are found at the bottom of the sketch.
-    if (potentiometer > 0 && potentiometer <= 150)
+    if (potentiometer > 0 && potentiometer <= 100)
       red();
-    if (potentiometer > 150 && potentiometer <= 300)
+    if (potentiometer > 100 && potentiometer <= 200)
       orange();
-    if (potentiometer > 300 && potentiometer <= 450)
+    if (potentiometer > 300 && potentiometer <= 300)
+      n1();
+    if (potentiometer > 300 && potentiometer <= 400)
       yellow();
-    if (potentiometer > 450 && potentiometer <= 600)
+    if (potentiometer > 400 && potentiometer <= 500)
+      yellowgreen();
+    if (potentiometer > 500 && potentiometer <= 600)
       green();
-    if (potentiometer > 600 && potentiometer <= 750)
+    if (potentiometer > 600 && potentiometer <= 700)
+      greenblue();
+    if (potentiometer > 700 && potentiometer <= 800)
       cyan();
-    if (potentiometer > 750 && potentiometer <= 900)
+    if (potentiometer > 800 && potentiometer <= 900)
       blue();
     if (potentiometer > 900 && potentiometer <= 1000)
       magenta();
-    if (potentiometer > 1000) //add more colors
-      new_color(); //change to be changes of 100 and add more colors
+    if (potentiometer > 1000)
+      darkmagenta();
   }
   else { //if it isn't dark turn the LED off
     turnOff(); //call the turn off function
   }
 }
 void red () {
-
   //set the LED pins to values that make red
   analogWrite(RedPin, 100);
   analogWrite(GreenPin, 0);
   analogWrite(BluePin, 0);
 }
 void orange () {
-
   //set the LED pins to values that make orange
   analogWrite(RedPin, 100);
   analogWrite(GreenPin, 50);
   analogWrite(BluePin, 0);
 }
+void n1 () {
+  //set the LED pins to values that make orange
+  analogWrite(RedPin, 100);
+  analogWrite(GreenPin, 50);
+  analogWrite(BluePin, 50);
+}
 void yellow () {
-
   //set the LED pins to values that make yellow
   analogWrite(RedPin, 100);
   analogWrite(GreenPin, 100);
   analogWrite(BluePin, 0);
 }
+void yellowgreen () {
+  //set the LED pins to values that make green
+  analogWrite(RedPin, 50);
+  analogWrite(GreenPin, 100);
+  analogWrite(BluePin, 0);
+}
 void green () {
-
   //set the LED pins to values that make green
   analogWrite(RedPin, 0);
   analogWrite(GreenPin, 100);
   analogWrite(BluePin, 0);
 }
+void greenblue () {
+  //set the LED pins to values that make green
+  analogWrite(RedPin, 0);
+  analogWrite(GreenPin, 100);
+  analogWrite(BluePin, 50);
+}
 void cyan () {
-
   //set the LED pins to values that make cyan
   analogWrite(RedPin, 0);
   analogWrite(GreenPin, 100);
   analogWrite(BluePin, 100);
 }
 void blue () {
-
   //set the LED pins to values that make blue
   analogWrite(RedPin, 0);
   analogWrite(GreenPin, 0);
   analogWrite(BluePin, 100);
 }
 void magenta () {
-
   //set the LED pins to values that make magenta
   analogWrite(RedPin, 100);
   analogWrite(GreenPin, 0);
   analogWrite(BluePin, 100);
 }
-void new_color () {
-
+void darkmagenta () {
   //set the LED pins to values that make new_color
   analogWrite(RedPin, 100);
   analogWrite(GreenPin, 0);
