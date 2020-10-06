@@ -7,7 +7,7 @@ The program is compatible with an Arduino Uno board which was set up using a Spa
 You will need:
 ![Items needed](1Dparts.png)
 
-The longest pin of the RBG light is the common or ground.
+The longest pin of the RGB light is the common or ground.
 
 Arduino and USB drivers will need to be installed for the code to work. Go to www.arduino.cc/downloads to download Arduino and www.sparkfun.com/ch340 to download drivers. Pnce Arduino is installed you will need to select the correct board, in this case: Arduino Uno, and the correct port. Next, connect your board to the computer using an USB cable.
 
