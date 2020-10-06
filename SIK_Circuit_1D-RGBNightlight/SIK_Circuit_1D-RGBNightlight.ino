@@ -40,9 +40,18 @@ void loop() {
   Serial.print("  Potentiometer value:");
   Serial.println(potentiometer);          //print the potentiometer value to the serial monitor
 
-  multiple_colors();
+   multiple_colors();
+//  multi_color_blink();
 
   delay(100); //short delay so that the printout is easier to read
+}
+void multi_color_blink () {
+  if (photoresistor < threshold) {
+    red();
+    delay(300);
+    orange();
+    delay(300);
+  }
 }
 void multiple_colors () {
   if (photoresistor < threshold) { //if it's dark (the photoresistor value is below the threshold) turn the LED on
@@ -53,23 +62,21 @@ void multiple_colors () {
       red();
     if (potentiometer > 100 && potentiometer <= 200)
       orange();
-    if (potentiometer > 300 && potentiometer <= 300)
-      n1();
-    if (potentiometer > 300 && potentiometer <= 400)
+    if (potentiometer > 200 && potentiometer <= 300)
       yellow();
-    if (potentiometer > 400 && potentiometer <= 500)
+    if (potentiometer > 300 && potentiometer <= 400)
       yellowgreen();
-    if (potentiometer > 500 && potentiometer <= 600)
+    if (potentiometer > 400 && potentiometer <= 500)
       green();
-    if (potentiometer > 600 && potentiometer <= 700)
+    if (potentiometer > 500 && potentiometer <= 600)
       greenblue();
-    if (potentiometer > 700 && potentiometer <= 800)
+    if (potentiometer > 600 && potentiometer <= 700)
       cyan();
-    if (potentiometer > 800 && potentiometer <= 900)
+    if (potentiometer > 700 && potentiometer <= 800)
       blue();
-    if (potentiometer > 900 && potentiometer <= 1000)
+    if (potentiometer > 800 && potentiometer <= 900)
       magenta();
-    if (potentiometer > 1000)
+    if (potentiometer > 900)
       darkmagenta();
   }
   else { //if it isn't dark turn the LED off
@@ -87,12 +94,6 @@ void orange () {
   analogWrite(RedPin, 100);
   analogWrite(GreenPin, 50);
   analogWrite(BluePin, 0);
-}
-void n1 () {
-  //set the LED pins to values that make orange
-  analogWrite(RedPin, 100);
-  analogWrite(GreenPin, 50);
-  analogWrite(BluePin, 50);
 }
 void yellow () {
   //set the LED pins to values that make yellow
