@@ -2,6 +2,7 @@
 
 ### Running the Program
 The program is compatible with an Arduino Uno board which was set up using a SparkFun Inventor's Kit. Following the instructions, the basic board set up should look like this: 
+
 ![Arduino Board](images-and-gifs/board-template.jpg)
 
 You will need:
