@@ -41,9 +41,33 @@ void loop() {
   Serial.println(potentiometer);          //print the potentiometer value to the serial monitor
 
 //  multiple_colors();
-  multi_color_blink();
-
+//  multi_color_blink();
+  fadeLED();
+  
   delay(100); //short delay so that the printout is easier to read
+}
+void fadeLED () {
+  if (photoresistor < threshold) {
+    // if dark, light will fade from red to blue
+    for (int i = 0; i <= 100; i = i + 5) {
+      analogWrite(RedPin, 100-i);
+      analogWrite(GreenPin, 0);
+      analogWrite(BluePin, 0+i);
+      delay(200);
+    }
+    for (int i = 0; i <= 100; i = i + 5) {
+      analogWrite(RedPin, 0-i);
+      analogWrite(GreenPin, 0);
+      analogWrite(BluePin, 100-i);
+      delay(200);
+    }
+  }
+  else { //if it isn't dark turn the LED off, but will turn off after a run through of the fade
+    turnOff(); //call the turn off function
+  }
+}
+void change_threshold () {
+  delay(1);
 }
 void multi_color_blink () {
   if (photoresistor < threshold) {
