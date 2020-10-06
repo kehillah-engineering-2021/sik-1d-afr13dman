@@ -5,7 +5,7 @@ The program is compatible with an Arduino Uno board which was set up using a Spa
 ![Arduino Board](images-and-gifs/board-template.jpg)
 
 You will need:
-![Items needed](1Dparts.png)
+![Items needed](images-and-gifs/1Dparts.png)
 
 The longest pin of the RGB light is the common or ground.
 
