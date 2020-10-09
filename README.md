@@ -43,10 +43,24 @@ void loop() {
   multi_color_blink();
   fadeLED();
   change_threshold();
+  
+[... part of the code has been removed for visual purposes in the README...]
+}
 ```
 
 ### Challenges
 1. Add more colors:
+
+![More colors](images-and-gifs/more-colors.gif)
+
 2. Multi-color blink:
+
+![Multi color blink](images-and-gifs/multi-color-blink.gif)
+
 3. Change the threshold:
+
+![Change threshold](images-and-gifs/change-threshold.gif)
+
 4. Fading the led:
+
+![Fade LED](images-and-gifs/fade-LED.gif)
