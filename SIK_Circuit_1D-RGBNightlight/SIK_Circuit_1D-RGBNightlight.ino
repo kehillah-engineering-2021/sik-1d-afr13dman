@@ -40,9 +40,11 @@ void loop() {
   Serial.print("  Potentiometer value:");
   Serial.println(potentiometer);          //print the potentiometer value to the serial monitor
 
+  // user can choose which program they want to run and comment out the others
 //  multiple_colors();
 //  multi_color_blink();
-  fadeLED();
+//  fadeLED();
+  change_threshold();
   
   delay(100); //short delay so that the printout is easier to read
 }
@@ -67,8 +69,27 @@ void fadeLED () {
   }
 }
 void change_threshold () {
-  delay(1);
-  // potentiometer value changes the threshold value which then effects when the light turns on
+  // light is read through the potentiometer not the photoresistor
+  // the new threshold is based off of the value of the potentiometer (where it is pointing)
+  // potentiometer can cover values 0-1023 and is divided up into four parts
+  // the brighter the room, the redder the light
+  // the darker the room, the bluer the light
+  if (potentiometer > 0 && potentiometer <= 255.75) {
+    // lowest quadrant of light, bottom left corner of the potentiometer
+    red();
+  }
+  if (potentiometer > 255.75 && potentiometer <= 511.50) {
+    // mid-low quadrant of light, bottom right corner of the potentiometer
+    darkmagenta();
+  }
+  if (potentiometer > 511.50 && potentiometer <= 767.25) {
+    // mid-high quadrant of light, top right corner of the potentiometer
+    cyan();
+  }
+  if (potentiometer > 767.25 && potentiometer <= 1023) {
+    // highest quadrant of light, top left corner of the potentiometer
+    blue();
+  }
 }
 void multi_color_blink () {
   if (photoresistor < threshold) {
